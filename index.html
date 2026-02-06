@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serzedello Soluções | Futuro Digital</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -14,6 +15,7 @@
         <div class="container">
             <nav>
                 <div class="logo">SERZEDELLO <span>SOLUÇÕES</span></div>
+
                 <ul class="nav-links">
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Pacotes</a></li>
@@ -21,14 +23,31 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact" class="btn">Contato</a></li>
                 </ul>
+
+                <div class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
+        </div>
+
+        <div class="mobile-menu-overlay" id="mobileMenu">
+            <div class="close-menu-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul class="mobile-links">
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Pacotes</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h1 class="glitch-text">CONSTRUA SEU<br><span class="highlight-text">LEGADO DIGITAL</span></h1>
-            <p>Desenvolvimento web elegante, sofisticado e pronto para o futuro. Transforme sua ideia em código.</p>
+            <p>Eu crio <span class="typing-text"></span></p>
             <a href="#portfolio" class="btn">Ver Projetos</a>
         </div>
     </section>
@@ -129,7 +148,7 @@
 
                 <div class="project-card">
                     <div class="project-thumb">
-                        <img src="assets/github2.png" alt="Felipe Barba Músico">
+                        <img src="assets/github2.jpg" alt="Felipe Barba Músico">
                         <span class="tag tag-github">GITHUB</span>
                     </div>
                     <div class="project-info">
@@ -168,12 +187,16 @@
                 <a href="#">Github</a>
                 <a href="#">LinkedIn</a>
                 <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
+                <a href="https://wa.me/5521999999999" target="_blank">WhatsApp</a>
             </div>
             <p>&copy; 2026 Serzedello Soluções. Todos os direitos reservados.</p>
             <p class="footer-note">Feito no Rio de Janeiro para o mundo.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/5521999999999" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <div class="browser-modal" id="browserModal">
         <div class="browser-header">
