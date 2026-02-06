@@ -35,14 +35,14 @@
                     <li><a href="#contact" class="btn">Contato</a></li>
                 </ul>
 
-                <div class="mobile-menu-icon">
+                <div class="mobile-menu-icon" aria-label="Abrir menu de navegação">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
         </div>
 
         <div class="mobile-menu-overlay" id="mobileMenu">
-            <div class="close-menu-icon">
+            <div class="close-menu-icon" aria-label="Fechar menu de navegação">
                 <i class="fas fa-times"></i>
             </div>
             <ul class="mobile-links">
@@ -258,17 +258,20 @@
                 <div class="footer-info">
                     <h3>VAMOS CONVERSAR?</h3>
                     <p>Tem uma ideia incrível? Vamos transformá-la em realidade.</p>
+
                     <div class="socials">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5521983449006"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Visite meu Github"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Visite meu LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Visite meu Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521983449006" aria-label="Fale comigo no WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-form">
-                    <input type="text" id="clientName" placeholder="Seu Nome">
-                    <textarea id="clientMessage" placeholder="Descreva brevemente seu projeto..."></textarea>
+                    <input type="text" id="clientName" placeholder="Seu Nome" aria-label="Digite seu nome">
+                    <textarea id="clientMessage" placeholder="Descreva brevemente seu projeto..."
+                        aria-label="Digite sua mensagem"></textarea>
                     <button class="btn btn-full" id="sendWhatsapp">Enviar via WhatsApp <i
                             class="fab fa-whatsapp"></i></button>
                 </div>
@@ -282,7 +285,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5521983449006" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5521983449006" class="whatsapp-float" target="_blank" aria-label="Conversar no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

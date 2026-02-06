@@ -528,7 +528,7 @@ nav {
     line-height: 1.5;
 }
 
-/* --- DEPOIMENTOS (NOVO) --- */
+/* --- DEPOIMENTOS --- */
 .testimonials {
     padding: 100px 0;
 }
@@ -611,7 +611,7 @@ nav {
 }
 
 
-/* --- FOOTER & CONTACT FORM (NOVO) --- */
+/* --- FOOTER & CONTACT FORM --- */
 footer {
     padding: 50px 0;
     border-top: 1px solid #333;
@@ -912,7 +912,6 @@ iframe {
         grid-template-columns: 1fr;
     }
 
-    /* Footer Stack no Mobile */
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
