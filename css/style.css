@@ -21,6 +21,27 @@
     scroll-behavior: smooth;
 }
 
+/* --- BARRA DE ROLAGEM PERSONALIZADA (NOVO) --- */
+/* Funciona em Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 5px;
+    border: 2px solid #000;
+    /* Cria um espaço entre a barra e a borda */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 html,
 body {
     width: 100%;
@@ -35,6 +56,20 @@ body {
         radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.15) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 20%);
 }
+
+/* --- CLASSES DE ANIMAÇÃO AO ROLAR (NOVO) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Começa 50px para baixo */
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* --- UTILITÁRIOS --- */
 .container {
@@ -256,6 +291,55 @@ nav {
     }
 }
 
+/* --- TECH STACK (NOVO) --- */
+.tech-stack-container {
+    padding: 30px 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: var(--glass-border);
+    border-bottom: var(--glass-border);
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.tech-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tech-track {
+    display: flex;
+    width: calc(100px * 16);
+    /* Largura aproximada dos ícones x quantidade */
+    animation: scroll 20s linear infinite;
+}
+
+.tech-track i {
+    width: 100px;
+    font-size: 3rem;
+    color: var(--text-muted);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tech-track i:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    transform: scale(1.2);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100px * 8));
+    }
+
+    /* Move metade para resetar sem pulo */
+}
+
 /* --- SOBRE --- */
 .about {
     padding: 100px 0;
@@ -373,7 +457,7 @@ nav {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
 }
 
@@ -479,7 +563,6 @@ nav {
     border-bottom: 1px solid #333;
     gap: 15px;
     justify-content: space-between;
-    /* Garante que os itens fiquem nos cantos */
 }
 
 .browser-controls {
@@ -702,10 +785,8 @@ footer {
     }
 }
 
-/* --- RESPONSIVIDADE (TABLET & MOBILE) --- */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 900px) {
-
-    /* Ajustes para Tablet */
     .hero h1 {
         font-size: 3rem;
     }
@@ -716,8 +797,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
-    /* MOBILE GERAL */
     .nav-links {
         display: none;
     }
@@ -744,8 +823,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Projetos em 1 coluna */
-
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -754,28 +831,23 @@ footer {
         font-size: 25px;
     }
 
-    /* CORREÇÃO DO MODAL NAVEGADOR PARA MOBILE */
     .address-bar {
         display: none;
     }
 
-    /* Some a URL para dar espaço */
     .browser-header {
         padding: 0 10px;
     }
 
-    /* Menos padding lateral */
     .toggle-interaction span {
         font-size: 0.7rem;
     }
 
-    /* Texto menor */
     .toggle-switch {
         width: 25px;
         height: 14px;
     }
 
-    /* Switch menor */
     .toggle-switch::after {
         width: 10px;
         height: 10px;
