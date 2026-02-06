@@ -1,5 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- LÓGICA DO FORMULÁRIO WHATSAPP (NOVO) ---
+    const sendBtn = document.getElementById('sendWhatsapp');
+
+    if (sendBtn) {
+        sendBtn.addEventListener('click', () => {
+            const name = document.getElementById('clientName').value;
+            const message = document.getElementById('clientMessage').value;
+
+            // Validação simples
+            if (name === "" || message === "") {
+                alert("Por favor, preencha seu nome e a ideia do projeto.");
+                return;
+            }
+
+            // Seu número aqui (apenas números, com código do país 55 e DDD)
+            const phoneNumber = "5521999999999";
+
+            // Formata a mensagem para URL
+            const text = `Olá! Meu nome é ${name}. Gostaria de falar sobre: ${message}`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+            // Abre o WhatsApp
+            window.open(url, '_blank');
+        });
+    }
+
+
     // --- SCROLL ANIMATION (REVEAL) ---
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");

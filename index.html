@@ -4,6 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Desenvolvimento Web de Alto Padrão. Sites Cyberpunk, Landing Pages e Sistemas Web no Rio de Janeiro.">
+    <meta name="keywords" content="Desenvolvedor Web, Criação de Sites, Rio de Janeiro, Programador, Front-end">
+    <meta name="author" content="Serzedello Soluções">
+
+    <meta property="og:title" content="Serzedello Soluções | Futuro Digital">
+    <meta property="og:description" content="Transforme sua ideia em código com design futurista.">
+    <meta property="og:image" content="assets/eu.jpg">
+    <meta property="og:url" content="https://serzedello-projetos.com">
+
     <title>Serzedello Soluções | Futuro Digital</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +31,7 @@
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#services">Pacotes</a></li>
                     <li><a href="#portfolio">Projetos</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact" class="btn">Contato</a></li>
                 </ul>
 
@@ -38,7 +49,7 @@
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#services">Pacotes</a></li>
                 <li><a href="#portfolio">Projetos</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
         </div>
@@ -194,6 +205,32 @@
         </div>
     </section>
 
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal">O que dizem</h2>
+            <div class="testimonials-grid reveal">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"O Serzedello entregou o site antes do prazo e com uma qualidade visual incrível. Minhas vendas
+                        aumentaram na primeira semana."</p>
+                    <div class="client-info">
+                        <h4>Ricardo M.</h4>
+                        <span>Dono de E-commerce</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Profissional extremamente técnico e atencioso. A automação que ele criou economizou horas do meu
+                        dia."</p>
+                    <div class="client-info">
+                        <h4>Ana Clara</h4>
+                        <span>Gestora de RH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="faq" class="faq">
         <div class="container">
             <h2 class="section-title reveal">Perguntas Frequentes</h2>
@@ -216,14 +253,32 @@
 
     <footer id="contact">
         <div class="container">
-            <div class="socials">
-                <a href="#">Github</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
-                <a href="https://wa.me/5521983449006" target="_blank">WhatsApp</a>
+            <div class="footer-grid">
+
+                <div class="footer-info">
+                    <h3>VAMOS CONVERSAR?</h3>
+                    <p>Tem uma ideia incrível? Vamos transformá-la em realidade.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521983449006"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-form">
+                    <input type="text" id="clientName" placeholder="Seu Nome">
+                    <textarea id="clientMessage" placeholder="Descreva brevemente seu projeto..."></textarea>
+                    <button class="btn btn-full" id="sendWhatsapp">Enviar via WhatsApp <i
+                            class="fab fa-whatsapp"></i></button>
+                </div>
+
             </div>
-            <p>&copy; 2026 Serzedello Soluções. Todos os direitos reservados.</p>
-            <p class="footer-note">Feito no Rio de Janeiro para o mundo.</p>
+
+            <div class="copyright">
+                <p>&copy; 2026 Serzedello Soluções. Todos os direitos reservados.</p>
+                <p class="footer-note">Feito no Rio de Janeiro para o mundo.</p>
+            </div>
         </div>
     </footer>
 
