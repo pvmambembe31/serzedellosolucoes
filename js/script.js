@@ -1,24 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA DO MENU MOBILE (NOVO) ---
+    // --- LÓGICA DO MENU MOBILE ---
     const mobileBtn = document.querySelector('.mobile-menu-icon');
     const closeMenuBtn = document.querySelector('.close-menu-icon');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-links a');
 
-    // Abrir Menu
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Trava o scroll da página
-    });
+    // Função para abrir
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Trava o scroll
+        });
+    }
 
-    // Fechar Menu (Botão X)
-    closeMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Destrava scroll
-    });
+    // Função para fechar (botão X)
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Destrava
+        });
+    }
 
-    // Fechar Menu (Ao clicar em um link)
+    // Fecha ao clicar em um link
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
@@ -26,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // --- EFEITO TYPEWRITER (NOVO) ---
+    // --- EFEITO TYPEWRITER (CORRIGIDO) ---
     const textElement = document.querySelector('.typing-text');
     const words = ["Experiências Digitais.", "Soluções Web.", "o Futuro.", "Resultados."];
     let wordIndex = 0;
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Tempo de pausa com a palavra completa
+            typeSpeed = 2000; // Espera antes de apagar
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeEffect, typeSpeed);
     }
 
-    // Inicia o efeito se o elemento existir
+    // Só roda se o elemento existir na tela
     if (textElement) typeEffect();
 
 
@@ -67,19 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('projectFrame');
     const urlDisplay = document.getElementById('browserUrl');
     const viewButtons = document.querySelectorAll('.view-project');
-
-    // Controle de Interatividade
     const toggleBtn = document.getElementById('interactionToggle');
     const clickBlocker = document.getElementById('clickBlocker');
     let isInteractive = false;
 
     function updateInteraction() {
-        const toggleDiv = toggleBtn;
         if (isInteractive) {
-            toggleDiv.classList.add('toggle-active');
+            toggleBtn.classList.add('toggle-active');
             clickBlocker.style.display = 'none';
         } else {
-            toggleDiv.classList.remove('toggle-active');
+            toggleBtn.classList.remove('toggle-active');
             clickBlocker.style.display = 'block';
         }
     }
@@ -96,22 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        iframe.src = '';
-        document.body.style.overflow = 'auto';
-        isInteractive = false;
-        updateInteraction();
-    });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            iframe.src = '';
+            document.body.style.overflow = 'auto';
+            isInteractive = false;
+            updateInteraction();
+        });
+    }
 
-    toggleBtn.addEventListener('click', () => {
-        isInteractive = !isInteractive;
-        updateInteraction();
-    });
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            isInteractive = !isInteractive;
+            updateInteraction();
+        });
+    }
 
-    // --- LÓGICA DO FAQ ---
+    // --- FAQ ACCORDION ---
     const faqQuestions = document.querySelectorAll('.faq-question');
-
     faqQuestions.forEach(q => {
         q.addEventListener('click', () => {
             const item = q.parentElement;
