@@ -25,7 +25,6 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
-    /* SEGURANÇA CONTRA SCROLL HORIZONTAL */
 }
 
 body {
@@ -147,10 +146,9 @@ nav {
     text-shadow: 0 0 5px var(--primary);
 }
 
-/* --- MENU MOBILE (ESTILO CRÍTICO PARA O HEADER FUNCIONAR) --- */
+/* --- MENU MOBILE --- */
 .mobile-menu-icon {
     display: none;
-    /* Escondido no Desktop */
     font-size: 1.5rem;
     color: #fff;
     cursor: pointer;
@@ -160,7 +158,6 @@ nav {
     position: fixed;
     top: 0;
     right: -100%;
-    /* IMPORTANTE: ISSO ESCONDE O MENU INICIALMENTE */
     width: 75%;
     height: 100vh;
     background: rgba(5, 5, 5, 0.98);
@@ -176,7 +173,6 @@ nav {
 
 .mobile-menu-overlay.active {
     right: 0;
-    /* JS adiciona essa classe para mostrar o menu */
 }
 
 .close-menu-icon {
@@ -239,7 +235,7 @@ nav {
     position: relative;
 }
 
-/* --- TYPEWRITER CURSOR --- */
+/* --- TYPEWRITER --- */
 .typing-text {
     color: var(--secondary);
     font-weight: bold;
@@ -377,7 +373,7 @@ nav {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -463,7 +459,6 @@ nav {
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     z-index: 3000;
-    /* Z-index altíssimo para ficar acima de tudo */
     display: none;
     flex-direction: column;
     opacity: 0;
@@ -483,11 +478,14 @@ nav {
     padding: 0 20px;
     border-bottom: 1px solid #333;
     gap: 15px;
+    justify-content: space-between;
+    /* Garante que os itens fiquem nos cantos */
 }
 
 .browser-controls {
     display: flex;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .dot {
@@ -519,12 +517,17 @@ nav {
     font-size: 0.9rem;
     border: 1px solid #333;
     text-align: center;
+    margin: 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .browser-actions {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0;
 }
 
 .toggle-interaction {
@@ -699,25 +702,36 @@ footer {
     }
 }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
+/* --- RESPONSIVIDADE (TABLET & MOBILE) --- */
+@media (max-width: 900px) {
+
+    /* Ajustes para Tablet */
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
 
-    /* Esconde o menu de texto do desktop */
+    /* MOBILE GERAL */
     .nav-links {
         display: none;
     }
 
-    /* Mostra o ícone de hamburger */
     .mobile-menu-icon {
         display: block;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .about-card {
@@ -726,11 +740,50 @@ footer {
         padding: 20px;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projetos em 1 coluna */
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
         font-size: 25px;
+    }
+
+    /* CORREÇÃO DO MODAL NAVEGADOR PARA MOBILE */
+    .address-bar {
+        display: none;
+    }
+
+    /* Some a URL para dar espaço */
+    .browser-header {
+        padding: 0 10px;
+    }
+
+    /* Menos padding lateral */
+    .toggle-interaction span {
+        font-size: 0.7rem;
+    }
+
+    /* Texto menor */
+    .toggle-switch {
+        width: 25px;
+        height: 14px;
+    }
+
+    /* Switch menor */
+    .toggle-switch::after {
+        width: 10px;
+        height: 10px;
+        left: 2px;
+        top: 2px;
+    }
+
+    .toggle-active .toggle-switch::after {
+        transform: translateX(11px);
     }
 }

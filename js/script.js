@@ -6,23 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = document.querySelectorAll('.mobile-links a');
 
-    // Função para abrir
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Trava o scroll
+            document.body.style.overflow = 'hidden';
         });
     }
 
-    // Função para fechar (botão X)
     if (closeMenuBtn) {
         closeMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Destrava
+            document.body.style.overflow = 'auto';
         });
     }
 
-    // Fecha ao clicar em um link
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
@@ -30,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- EFEITO TYPEWRITER (CORRIGIDO) ---
+    // --- EFEITO TYPEWRITER ---
     const textElement = document.querySelector('.typing-text');
     const words = ["Experiências Digitais.", "Soluções Web.", "o Futuro.", "Resultados."];
     let wordIndex = 0;
@@ -50,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Espera antes de apagar
+            typeSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
@@ -60,9 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeEffect, typeSpeed);
     }
 
-    // Só roda se o elemento existir na tela
     if (textElement) typeEffect();
-
 
     // --- LÓGICA DO MODAL NAVEGADOR ---
     const modal = document.getElementById('browserModal');
