@@ -21,8 +21,7 @@
     scroll-behavior: smooth;
 }
 
-/* --- BARRA DE ROLAGEM PERSONALIZADA (NOVO) --- */
-/* Funciona em Chrome, Edge, Safari */
+/* --- BARRA DE ROLAGEM PERSONALIZADA --- */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -35,7 +34,6 @@
     background: var(--secondary);
     border-radius: 5px;
     border: 2px solid #000;
-    /* Cria um espaço entre a barra e a borda */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -57,11 +55,10 @@ body {
         radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 20%);
 }
 
-/* --- CLASSES DE ANIMAÇÃO AO ROLAR (NOVO) --- */
+/* --- ANIMAÇÃO REVEAL --- */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
-    /* Começa 50px para baixo */
     transition: all 0.8s ease-out;
 }
 
@@ -69,7 +66,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /* --- UTILITÁRIOS --- */
 .container {
@@ -291,7 +287,7 @@ nav {
     }
 }
 
-/* --- TECH STACK (NOVO) --- */
+/* --- TECH STACK SLIDER (CARROSSEL) --- */
 .tech-stack-container {
     padding: 30px 0;
     background: rgba(0, 0, 0, 0.3);
@@ -310,7 +306,7 @@ nav {
 .tech-track {
     display: flex;
     width: calc(100px * 16);
-    /* Largura aproximada dos ícones x quantidade */
+    /* Ajuste baseado na quant. ícones */
     animation: scroll 20s linear infinite;
 }
 
@@ -336,8 +332,6 @@ nav {
     100% {
         transform: translateX(calc(-100px * 8));
     }
-
-    /* Move metade para resetar sem pulo */
 }
 
 /* --- SOBRE --- */
@@ -785,7 +779,7 @@ footer {
     }
 }
 
-/* --- RESPONSIVIDADE --- */
+/* --- RESPONSIVIDADE (TABLET & MOBILE) --- */
 @media (max-width: 900px) {
     .hero h1 {
         font-size: 3rem;
@@ -831,6 +825,7 @@ footer {
         font-size: 25px;
     }
 
+    /* Ajuste do Modal */
     .address-bar {
         display: none;
     }
@@ -857,5 +852,27 @@ footer {
 
     .toggle-active .toggle-switch::after {
         transform: translateX(11px);
+    }
+
+    /* AJUSTE PARA O TECH STACK NO MOBILE (NOVO) */
+    .tech-track i {
+        font-size: 2rem;
+        width: 80px;
+    }
+
+    /* Ícones menores e mais próximos */
+    .tech-track {
+        width: calc(80px * 16);
+    }
+
+    /* Recalcula a largura total */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-80px * 8));
+        }
     }
 }

@@ -1,27 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- SCROLL ANIMATION (REVEAL) (NOVO) ---
+    // --- SCROLL ANIMATION (REVEAL) ---
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
 
         for (var i = 0; i < reveals.length; i++) {
             var windowHeight = window.innerHeight;
             var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150; // Distância do topo para ativar
+            var elementVisible = 150;
 
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("active");
-            } else {
-                // Opcional: remover o 'else' se quiser que a animação aconteça apenas uma vez
-                // reveals[i].classList.remove("active");
             }
         }
     }
 
-    // Ouve o evento de rolagem
     window.addEventListener("scroll", reveal);
-
-    // Chama uma vez ao carregar para mostrar o que já está na tela
     reveal();
 
     // --- LÓGICA DO MENU MOBILE ---
