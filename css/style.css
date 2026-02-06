@@ -298,7 +298,6 @@ nav {
     overflow: hidden;
     transition: 0.3s;
     position: relative;
-    /* Necessário para a tag */
 }
 
 .project-card:hover {
@@ -325,7 +324,7 @@ nav {
     transform: scale(1.1);
 }
 
-/* TAGS DE ORIGEM (GITHUB/BASE44) */
+/* TAGS DE ORIGEM */
 .tag {
     position: absolute;
     top: 10px;
